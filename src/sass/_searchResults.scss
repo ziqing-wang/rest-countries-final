@@ -1,0 +1,55 @@
+.search__results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem auto;
+
+    .message {
+        font-size: 1.7rem;
+    }
+
+    .country {
+        font-size: 1.8rem;
+        width: 28rem;
+        border-radius: 0.7rem;
+        box-shadow: $light-shadow;
+        margin-bottom: 4rem;
+
+        &__img {
+            width: 28rem;
+            height: 14rem;
+            object-fit: cover;
+            border-radius: 9px 9px 0 0;
+        }
+
+        &__data {
+            padding: 2.5rem 3.75rem 3rem 3.75rem;
+            font-size: 1.7rem;
+        }
+
+        &__name {
+            margin-bottom: 2rem;
+        }
+
+        &__row:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        &__row span {
+            display: inline-block;
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+@media(max-width: $bp-small) {
+    .search__results {
+        justify-content: center;
+    }
+}

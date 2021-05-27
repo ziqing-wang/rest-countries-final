@@ -1,0 +1,39 @@
+$color-blue-dark-1: hsl(209, 23%, 22%); //Dark mode elements
+$color-blue-dark-2:hsl(207, 26%, 17%); //Dark mode background
+$color-blue-dark-3:hsl(200, 15%, 8%); //Light Mode Text
+$color-gray-dark:hsl(0, 0%, 52%); //Light Mode Input
+$color-gray-light:hsl(0, 0%, 98%); //Light Mode backgroung
+$color-white:hsl(0, 0%, 100%); //Dark Mode Text & Light Mode Elements
+$color-btn-hover: lightgray; // hover btns
+
+$bp-large: 1440px;
+$bp-small: 415px;
+
+$light-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.1);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: $color-gray-light;
+    color: $color-blue-dark-3;
+    font-weight: 300;
+}
+
+
+
+.container {
+    margin: 4% 5%;
+}
+
+.hidden {
+    display: none;
+}

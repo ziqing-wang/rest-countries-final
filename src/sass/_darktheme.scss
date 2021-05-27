@@ -1,0 +1,30 @@
+
+.dark-theme {
+    background-color: $color-blue-dark-2;
+    color: $color-gray-light;
+
+    header {
+        background-color: $color-blue-dark-1;
+    }
+
+    .search__results {
+        .country {
+            background-color: $color-blue-dark-1;
+        }
+    }
+
+    .btn,
+    .drop-down__btn,
+    input {
+        background-color: $color-blue-dark-1;
+        color: $color-gray-light;
+    }
+
+    .detail {
+        .detail__btn {
+            background-color: $color-blue-dark-1;
+            color: $color-gray-light;
+            box-shadow: none;
+        }
+    }
+}

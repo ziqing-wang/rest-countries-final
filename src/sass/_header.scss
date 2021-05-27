@@ -1,0 +1,32 @@
+.header {
+    background-color: #fff;
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        box-shadow: $light-shadow;
+        font-size: 1.7rem;
+        padding: 2rem 3.75rem;
+
+        &__mode {
+            font-size: 1.7rem;
+        }
+    }
+
+
+    @media(max-width: $bp-small) {
+
+        .nav {
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            &__mode {
+                padding: 1rem;
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
