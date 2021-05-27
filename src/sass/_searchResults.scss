@@ -1,7 +1,7 @@
 .search__results {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
     margin: 2rem auto;
 
     .message {
@@ -13,7 +13,7 @@
         width: 28rem;
         border-radius: 0.7rem;
         box-shadow: $light-shadow;
-        margin-bottom: 4rem;
+        margin: 3rem;
 
         &__img {
             width: 28rem;

@@ -1,8 +1,6 @@
 export default class View {
     _data;
-    constructor() {
-    }
-
+   
     render(data) {
         if (!data || (Array.isArray(data) && data.length === 0)) return this.renderError();
         this._data = data;
@@ -10,6 +8,16 @@ export default class View {
         const markup = this._generateMarkup();
         this._clear();
         this._parentElement.insertAdjacentHTML('beforeend', markup);
+    }
+
+    renderError(message = this._errorMessage) {
+        const markup = `
+            <div class="message"> 
+              ${message}
+            </div> 
+          `;
+        this._clear();
+        this._parentElement.insertAdjacentHTML('afterbegin', markup);
     }
 
     _clear() {
@@ -22,13 +30,5 @@ export default class View {
         })
     }
 
-    renderError(message = this._errorMessage) {
-        const markup = `
-            <div class="message"> 
-              ${message}
-            </div> 
-          `;
-        this._clear();
-        this._parentElement.insertAdjacentHTML('afterbegin', markup);
-    }
+ 
 }
