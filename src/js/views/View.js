@@ -2,7 +2,7 @@ export default class View {
     _data;
    
     render(data) {
-        if (!data || (Array.isArray(data) && data.length === 0)) return this.renderError();
+        if (!data || (Array.isArray(data) && data.length === 0)) return;
         this._data = data;
 
         const markup = this._generateMarkup();
@@ -24,11 +24,4 @@ export default class View {
         this._parentElement.innerHTML = '';
     }
 
-    _switchMode() {
-        this._btn.addEventListener('click', () => {
-            this._parentElement.classList.toggle('dark-theme');
-        })
-    }
-
- 
 }

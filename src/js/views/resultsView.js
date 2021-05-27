@@ -2,7 +2,7 @@ import View from './View.js'
 
 class ResultsView extends View {
     _parentElement = document.querySelector('.search__results');
-    _errorMessage = '☹ No country found, please try again.'
+    _errorMessage = '😥 No country found, please try again.'
 
     addHandlerClick(handler) {
         this._parentElement.addEventListener('click', e => {

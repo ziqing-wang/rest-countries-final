@@ -150,7 +150,9 @@ body {
   margin: 2rem auto;
 }
 .search__results .message {
+  width: 30rem;
   font-size: 1.7rem;
+  margin: 3rem;
 }
 .search__results .country {
   font-size: 1.8rem;
@@ -191,7 +193,6 @@ body {
   }
 }
 .detail {
-  min-width: 30rem;
   margin: 4% 5%;
   font-size: 1.7rem;
 }
@@ -207,18 +208,18 @@ body {
   margin-bottom: 5rem;
 }
 .detail .country {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
+  justify-content: center;
 }
 .detail .country__img {
-  max-width: 40rem;
+  width: 50rem;
+  min-width: 32rem;
   -o-object-fit: cover;
      object-fit: cover;
-  min-width: 30rem;
-  margin: auto;
+  padding: 0 5rem;
 }
 .detail .country__main {
-  padding: 0 10rem;
+  padding: 0 5rem;
 }
 .detail .country__main .country__name {
   font-size: 2.4rem;
@@ -230,7 +231,8 @@ body {
   justify-content: space-between;
 }
 .detail .country__main .country__data .country__column {
-  padding: 1rem 0;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
 }
 .detail .country__main .country__data .country__column .country__row {
   padding: 0.5rem 0;
@@ -253,10 +255,13 @@ body {
   .detail .country .country__main {
     padding: 2rem;
   }
+  .detail .country .country__img {
+    width: 32rem;
+  }
 }
-@media (max-width: 90rem) {
+@media (max-width: 1024px) {
   .detail .country {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 

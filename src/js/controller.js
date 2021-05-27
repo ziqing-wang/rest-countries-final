@@ -9,25 +9,31 @@ const captalize = (str) => {
 }
 
 const controlSearch = async function () {
-    const query = searchView.getQuery();
-    if (!query) return;
-    const capitalisedQuery = captalize(query);
-    //load search results
-    await model.loadSearchResults(capitalisedQuery);
+    try {
+        const query = searchView.getQuery();
+        if (!query) return;
+        const capitalisedQuery = captalize(query);
+        //load search results
+        await model.loadSearchResults(capitalisedQuery);
 
-    // Render results
-    resultsView.render(model.state.results)
+        // Render results
+        resultsView.render(model.state.results)
+
+    } catch (err) {
+        resultsView.renderError();
+    }
 }
 
 // Click to go detail page
-const controlClick = async function (fullname) {
+const controlClick = function (fullname) {
     // Go to detail page
     window.location.href = `detail.html#${fullname}`;
 }
 
 const controlFilter = function (filterValue) {
     const filteredResults = model.state.results.filter(c => c.region === filterValue)
-    resultsView.render(filteredResults);
+    if (filteredResults.length === 0) resultsView.renderError('😥 No matched country.');
+    else resultsView.render(filteredResults);
 }
 
 const persistTheme = (theme) => {
@@ -42,13 +48,13 @@ const controlTheme = () => {
 }
 
 const init = () => {
-   
+
     if (model.state.results) resultsView.render(model.state.results);
-   
+
     controlTheme();
     themeView.addHandlerTheme(persistTheme);
     searchView.addHandlerSearch(controlSearch);
     resultsView.addHandlerClick(controlClick);
-    filterView.addHandlerFilter(controlFilter)
+    filterView.addHandlerFilter(controlFilter);
 }
 init()
